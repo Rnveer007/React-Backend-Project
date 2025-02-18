@@ -10,8 +10,6 @@ const port = 2000; // variable name can be anything
 // CRUD Oprations : Create, Read, Update, Delete 
 // clint server model: - in this model clint (user) send the request to server (backend) and server give a response to the clint according to the data ....
 
-
-
 const data = [
     { id: 1, name: "Ranveer" },
     { id: 2, name: "Shikhar" },
@@ -19,18 +17,20 @@ const data = [
     { id: 4, name: "Rishi" },
 ]
 
-app.get('/', (req, res) => {
+
+//for getting existing data we need this opration (.get).
+app.get('/', (req, res) => { // res always be second argument 
     res.send(data);
 });
 
-app.post('/', (req, res) => {
+app.post('/', (req, res) => { // for adding or sending a new data in existing data we need this opration
     const newData = req.body;
     data.push(newData);
     res.status(201).send(data);
 });
 
 app.listen(port, () => {
-console.log("server has started at port " + port)
+    console.log("server has started at port " + port)
 })
 
 
