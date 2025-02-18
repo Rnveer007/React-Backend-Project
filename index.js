@@ -19,11 +19,11 @@ const data = [
 
 
 //for getting existing data we need this opration (.get).
-app.get('/', (req, res) => { // res always be second argument 
+app.get('/api/get', (req, res) => { // res always be second argument 
     res.send(data);
 });
 
-app.post('/', (req, res) => { // for adding or sending a new data in existing data we need this opration
+app.post('/api/post', (req, res) => { // for adding or sending a new data in existing data we need this opration
     const newData = req.body;
     data.push(newData);
     res.status(201).send(data);
