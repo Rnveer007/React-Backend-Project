@@ -29,7 +29,7 @@ app.post('/api/post', (req, res) => { // for adding or sending a new data in exi
     res.status(201).send(data);
 });
 
-app.listen(port, () => {
+app.listen(port, () => { 
     console.log("server has started at port " + port)
 })
 
