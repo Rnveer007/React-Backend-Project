@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+
   const [data, setData] = useState({
     name: "",
     category: "",
@@ -20,9 +21,13 @@ function App() {
   }
   console.log(data)
 
+  function handleSubmit() {
+
+  }
+
   return (
     <>
-      <form action="" className='pt-4  flex gap-10 ml-10'>
+      <form action="" onSubmit={handleSubmit} className='pt-4  flex gap-10 ml-10'>
         <input type="text" name='name' value={data.name} onChange={handleChange} placeholder='Name' className='border-2 pl-3' />
         <input type="text" name='category' value={data.category} onChange={handleChange} placeholder='Categories' className='border-2 pl-3' />
         <input type="text" name='brand' value={data.brand} onChange={handleChange} placeholder='Brand' className='border-2 pl-3' />
